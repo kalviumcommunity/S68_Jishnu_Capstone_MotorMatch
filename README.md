@@ -49,3 +49,13 @@
 ⬜️ Week 4 – Messaging  
 ⬜️ Week 5 – Deployment  
 
+----
+
+## ✅ Proof of Work Tracking – GitHub Projects
+
+We are tracking daily tasks and milestone progress using [GitHub Projects (Table View)](https://github.com/orgs/kalviumcommunity/projects/473/views/1).  
+Each day is logged as a separate item in the project tracker including Title, Day, Description, and Status.
+
+- At least **10 entries spanning 10+ days** are created and updated daily.
+- Concepts implemented are described clearly in each row.
+- All project progress is transparently tracked here.
