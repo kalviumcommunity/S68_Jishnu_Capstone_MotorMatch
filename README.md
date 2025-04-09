@@ -1,5 +1,5 @@
 # S68_Jishnu_Capstone_MotorMatch
-# 🚗 MotorMatch - Capstone Project
+# 🚗 MotorMatch - Capstone Project ⚡
 
 ## 🧠 Project Idea
 
