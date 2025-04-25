@@ -31,7 +31,7 @@ router.post("/", async (req, res) => {
 });
 
 // PUT: Update user details
-router.put("/:id", protect, async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!updatedUser) return res.status(404).json({ message: "User not found" });
@@ -42,3 +42,4 @@ router.put("/:id", protect, async (req, res) => {
 });
 
 module.exports = router;
+
