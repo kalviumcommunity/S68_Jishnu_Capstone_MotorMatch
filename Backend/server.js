@@ -1,12 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-// const connectDB = require('./db');
-// const authRoutes = require('./routes/authRoutes');
 const vehicleRoutes = require('./routes/vehicleRoutes');
-const feedbackRoutes = require('./routes/Feedbackroutes'); // Added feedback routes
-const userRoutes = require('./routes/Userroutes'); // Added user routes
+const feedbackRoutes = require('./routes/Feedbackroutes');
+const userRoutes = require('./routes/Userroutes');
 const connectDB = require('./db');
-// require('dotenv').config();
+require('dotenv').config();
 
 const app = express();
 
@@ -14,21 +12,34 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Middleware to handle invalid JSON format
+app.use((err, req, res, next) => {
+  if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
+    console.error('Bad JSON:', err.message);
+    return res.status(400).json({ error: 'Invalid JSON format' });
+  }
+  next();
+});
+
 // Routes
-// app.use('/api/auth', authRoutes);
-app.use('/api/vehicles', vehicleRoutes); // Vehicle routes
-app.use('/api/feedback', feedbackRoutes); // Feedback routes
-app.use('/api/users', userRoutes); // User routes
+app.use('/api/vehicles', vehicleRoutes);
+app.use('/api/feedback', feedbackRoutes);
+app.use('/api/users', userRoutes);
 
 // Connect to Database and Start Server
 const url = process.env.db_uri;
-const port =  5000; // Default to 5000 if PORT is not set
-require('dotenv').config();
+const port = 5000;
+
+app.get('/', (req, res) => {
+  res.send('Welcome to the MotorMatch API!');
+});
+
 app.listen(port, async () => {
   try {
-      await connectDB(url);
-      console.log(`Server is running on port:${port} Link: http://localhost:${port}`);
+    await connectDB(url);
+    console.log(`Server is running on port:${port} Link: http://localhost:${port}`);
   } catch (err) {
-      console.log(err);
+    console.log(err);
   }
 });
+ 
