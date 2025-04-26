@@ -31,7 +31,7 @@ export default function WishlistPage() {
         {wishlistCars.length === 0 ? (
           <div className="bg-white rounded-lg shadow-sm p-8 text-center">
             <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Heart className="text-gray-400" size={28} />
+              <Heart className="text-gray-400" size={28} /> 
             </div>
             <h2 className="text-xl font-semibold mb-2">Your wishlist is empty</h2>
             <p className="text-gray-600 mb-6">

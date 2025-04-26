@@ -12,7 +12,7 @@ export default function LoginPage() {
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
-    rememberMe: false
+    rememberMe: true
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
