@@ -79,6 +79,8 @@ We are tracking daily tasks and milestone progress using **GitHub Projects (Tabl
 
 ---
 [Backend Deployment]( https://s68-jishnu-capstone-motormatch-1.onrender.com)
+---
+[Frontend Deployment](dulcet-sprite-57a449.netlify.app)
 
 ---
 
